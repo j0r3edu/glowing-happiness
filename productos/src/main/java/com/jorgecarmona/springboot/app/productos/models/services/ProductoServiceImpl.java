@@ -18,12 +18,14 @@ public class ProductoServiceImpl implements IProductoServices {
     @Override
     @Transactional(readOnly = true)
     public List<Producto> findAll() {
+
         return (List<Producto>) productoDao.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
     public Producto findById(Long id) {
+
         return productoDao.findById(id).orElse(null);
     }
 }
